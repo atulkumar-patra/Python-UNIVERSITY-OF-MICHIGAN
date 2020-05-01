@@ -1,0 +1,14 @@
+fname = input("Enter file name: ")
+fh = open(fname)
+inpp = fh.read()
+wor = inpp.rstrip().split()
+wor.sort()
+n = list()
+for word in wor:
+    if word in n:
+        continue
+    else:
+        n.append(word)
+
+
+print(n)

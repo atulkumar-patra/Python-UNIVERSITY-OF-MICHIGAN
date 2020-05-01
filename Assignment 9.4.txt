@@ -1,0 +1,20 @@
+name = input("Enter file:")
+f = open(name)
+l = list()
+counts = dict()
+
+for line in f:
+    if line.startswith("From "):
+        word = line.split()
+        l.append(word[1])
+
+for words in l:
+            counts[words] = counts.get(words,0)+1
+
+bc = None
+bw = None
+for w,c in counts.items():
+    if bc is None or c > bc:
+        bw = w
+        bc = c
+print(bw , bc)

@@ -1,0 +1,24 @@
+name = input("Enter file:")
+f = open(name)
+l = list()
+li = list()
+counts = dict()
+cou = dict()
+
+for line in f:
+    if line.startswith("From "):
+        word = line.split()
+        l.append(word[5])
+for words in l:
+    counts[words] = counts.get(words,0)+1
+
+kk = list(counts)
+for ll in kk:
+    ww = ll.split(':')
+    li.append(ww[0])
+for no in li:
+    cou[no] = cou.get(no,0)+1
+
+
+for k,v in sorted(cou.items()):
+    print(k,v)
